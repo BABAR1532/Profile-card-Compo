@@ -1,0 +1,149 @@
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+    color-scheme: dark light;
+}
+
+/* min body height */
+
+body {
+    min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* My own code */
+
+body {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    z-index: 2;
+    background-color: hsl(185, 75%, 39%);
+}
+
+.bg-image {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    background-image: url(images/bg-pattern-top.svg);
+    transform: rotate(180deg);
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    background-image: url(images/bg-pattern-bottom.svg);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 425px;
+    width: 390px;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    z-index: 55;
+    min-width: 300px;
+}
+
+#pattern-image {
+    width: 100%;
+    z-index: 22;
+    border-radius: 15px 15px 0 0;
+}
+
+#user-image {
+    width: 30%;
+    border-radius: 50%;
+    margin-top: -5em;
+    border: 5px solid white;
+    z-index: 32;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-top: 2px solid rgb(232, 229, 229);
+    padding: 28px;
+    margin-top: -15px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 14px;
+}
+
+#age {
+    color: hsl(0, 0%, 59%);
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+h1+p {
+    color: hsl(0, 0%, 59%);
+    font-weight: 400;
+    margin-bottom: 2em;
+}
+
+.stats span:last-of-type {
+    font-size: 14px;
+    font-weight: 500;
+    color: hsl(0, 0%, 59%);
+    letter-spacing: 1px;
+}
+
+@media (max-width:390px) {
+
+
+    .container {
+        width: 95%;
+    }
+}
